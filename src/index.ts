@@ -1,7 +1,10 @@
+
 import { EstoqueVeiculos } from "./classes/EstoqueVeiculos";
 import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
+import { Veiculo } from "./interface/Veiculo";
+import { FiltroVeiculos } from "./utils/FiltroVeiculos";
 
 const meuCarro: Carro = {
     marca: "Toyota",
@@ -78,3 +81,19 @@ estoque.consultarEstoque("Civic");
 
 estoque.removerEstoque("Civic", 1);
 estoque.consultarEstoque("Civic");
+
+// Filtro Veículos
+const veiculos: Veiculo[] = [
+    { marca: "Toyota", modelo: "Corolla", ano: 2022 , acelerar: () => "O carro está acelerando!"},
+    { marca: "Ford", modelo: "Ka", ano: 2020, acelerar: () => "O carro está acelerando!"},
+    { marca: "Honda", modelo: "Civic", ano: 2022, acelerar: () => "O carro está acelerando!" },
+    { marca: "Honda", modelo: "Fit", ano: 2019, acelerar: () => "O carro está acelerando!" },
+    { marca: "Toyota", modelo: "Hilux", ano: 2021, acelerar: () => "O carro está acelerando!" },
+    { marca: "Ford", modelo: "Fiesta", ano: 2018, acelerar: () => "O carro está acelerando!" }
+];
+
+const filtroVeiculos = new FiltroVeiculos;
+
+console.log("Veículos do ano 2022:", filtroVeiculos.filtrarPorAno(veiculos, 2022));
+console.log("Veículos da marca Honda:", filtroVeiculos.filtrarPorMarca(veiculos, "Honda"));
+console.log("Veículos do modelo Corolla:", filtroVeiculos.filtrarPorModelo(veiculos, "Corolla"));
