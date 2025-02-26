@@ -5,6 +5,7 @@ import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
 import { Veiculo } from "./interface/Veiculo";
 import { FiltroVeiculos } from "./utils/FiltroVeiculos";
+import { RelatorioVeiculos } from "./utils/RelatorioVeiculos";
 
 const meuCarro: Carro = {
     marca: "Toyota",
@@ -97,3 +98,8 @@ const filtroVeiculos = new FiltroVeiculos;
 console.log("Veículos do ano 2022:", filtroVeiculos.filtrarPorAno(veiculos, 2022));
 console.log("Veículos da marca Honda:", filtroVeiculos.filtrarPorMarca(veiculos, "Honda"));
 console.log("Veículos do modelo Corolla:", filtroVeiculos.filtrarPorModelo(veiculos, "Corolla"));
+
+// Relatório de Veículos
+const relatorio = RelatorioVeiculos.gerarRelatorio(veiculos);
+console.log("Relatório de Veículos:");
+console.log(relatorio);
