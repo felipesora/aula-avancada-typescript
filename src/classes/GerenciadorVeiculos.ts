@@ -1,5 +1,5 @@
-
-export class GerenciadorVeiculos<T>{
+import { Veiculo } from './../interface/Veiculo';
+export class GerenciadorVeiculos<T extends Veiculo>{
     private veiculos: T[] = [];
 
     adicionar(veiculo: T):void {

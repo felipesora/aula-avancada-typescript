@@ -1,3 +1,4 @@
+import { EstoqueVeiculos } from "./classes/EstoqueVeiculos";
 import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
@@ -58,3 +59,22 @@ console.log(gereciadorMotos.listarVeiculos());
 gereciadorMotos.remover(minhaMoto2);
 console.log("Lista de Motos após a remoção:");
 console.log(gereciadorMotos.listarVeiculos());
+
+// Estoque
+// Adicionando veículos ao estoque
+const estoque = new EstoqueVeiculos();
+estoque.adicionarEstoque("Corolla", 5);
+estoque.adicionarEstoque("Civic", 3);
+estoque.adicionarEstoque("Corolla", 2); 
+
+// Consultando o estoque
+estoque.consultarEstoque("Corolla"); 
+estoque.consultarEstoque("Civic"); 
+estoque.consultarEstoque("HB20");
+
+// Removendo veículos do estoque
+estoque.removerEstoque("Civic", 2);
+estoque.consultarEstoque("Civic"); 
+
+estoque.removerEstoque("Civic", 1);
+estoque.consultarEstoque("Civic");
